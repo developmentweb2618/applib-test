@@ -1,0 +1,151 @@
+<section class="banner">
+    <div class="flex-container">
+        <div class="flex-item-left page-color">
+            <h2>Welcome to the </h2>
+            <h2>Application Library</h2>
+            <h2>Engineering Group Events</h2>
+        </div>
+
+        <div class="flex-item-right page-color">
+            <!-- <img src="{{img.eventbannerImg}}" alt="events" width="100%"> -->
+            <div id="demo" class="carousel slide" data-ride="carousel">
+
+              <!-- Indicators -->
+              <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+              </ul>
+              
+              <!-- The slideshow -->
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <img src="{{img.prizebanner}}"alt="events" width="100%">
+                </div>
+                <div class="carousel-item">
+                  <img src="{{img.eventbannerImg}}" alt="events" width="100%">
+                </div>
+              </div>
+              
+              <!-- Left and right controls -->
+              <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+              </a>
+              <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+              </a>
+            </div>
+            
+        </div>
+  </div>
+  </section>
+<div class="container-fluid" ng-controller="eventController">
+    <div class="row ">
+      <div class="col-sm-8">
+        <div class="event-header">
+          <h1 class="all-events">ALL <span class="blue-event">EVENTS</span></h1>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-4 card-rows">
+            <div class="input-group">
+              <input type="text" class="form-control" placeholder="Search" ng-model="eventsFilter">
+              <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">
+                      <i class="fa fa-search"></i>
+                  </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-2 card-rows">
+            <div class="dropdown show">
+              <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Any Day
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-3 card-rows">
+            <div class="dropdown show">
+              <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Category
+              </a>
+            
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+          </div>
+          <!-- <div class="col-sm-3">
+              <a class="filter-reset" href="#" aria-expanded="true">
+                Reset Filters
+              </a>
+          </div> -->
+        </div>
+        <hr>
+        <!-- <ul>
+
+          <li ng-repeat="d in data">
+              {{d.name}}
+          </li>
+      </ul> -->
+        
+      <!-- cards for all events -->
+
+      <div class="card" ng-repeat="r in result | filter:eventsFilter">
+        <a href="#!event-description/{{r.id}}"  class="event-detail-page" >
+          <div class="card-body">
+              <div class="clearfix">
+                <img src="{{img.shareImg}}" class="img2" alt="share">
+                <img src="{{img.favouriteImg}}" class="img2" alt="favourite">
+                <h1>{{r.name}}</h1>
+              </div>
+              <div class="clearfix .body-info ">
+                <img src="{{img.eventsDetailImg}}" class="img2" alt="detail" width="230px">
+                <h2 class="date-event">{{r.local_date}}, {{r.local_time}}</h2>
+                <p>{{r.description | limitTo: "210"}}</p>
+              </div>
+              <div class="clearfix">
+                <h2 class="speaker">Speakers</h2>
+                <img src="{{img.eventsDetailImg}}" alt="speaker" width="100px">
+              </div>
+              <div class="clearfix">
+                <img src="{{img.onlineEventsImg}}" alt="online-events" class="online-events">
+                <button class="btn btn-primary register-button" >Register</button>
+                <a href="#" class="img2">{{r.yes_rsvp_count}} Registered</a>
+              </div>
+          </div>
+        </a>
+      </div>
+
+      </div>
+
+
+      <!-- Right side events -->
+
+      <div class="col-sm-4 right-sidebar">
+          <div class="event-header">
+            <h1 class="all-events">Popular <span class="blue-event"> Events</span></h1>
+            <hr>
+          </div>
+
+          <div class="card" style="width:270px" ng-repeat="r in result | filter:eventsFilter">
+            <img class="card-img-top" src="{{img.event_image}}" alt="Card image" style="width:100%">
+            <div class="card-body">
+              <h4 class="card-title">{{r.name}}</h4>
+              <p class="card-text">{{r.local_date}}, {{r.local_time}}</p>
+              <hr>
+              <a href="#">{{r.yes_rsvp_count}} Registered   </a>
+              <a href="#" class="btn btn-primary stretched-link"> Register</a>
+            </div>
+          </div>
+      </div>
+    </div>
+</div>
+

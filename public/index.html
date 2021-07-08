@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="applibApp">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel= "text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- <script src="../node_modules/angular/angular.min.js"></script> -->
+    <link rel="stylesheet" href="./src/css/events.css">
+    <link rel="stylesheet" href="./src/css/event-description.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://code.angularjs.org/1.8.2/angular-route.min.js"></script>    
+    <title>Home page</title>
+</head>
+<body >
+    <nav class="navbar navbar-expand-sm">
+        <a class="navbar-brand" href="#/!"><img src="./src/images/applib_logo.png" alt="logo" width="50%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#!library">Library</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!resources">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!events">Events</a>
+            </li>   
+            <li class="nav-item">
+                <a class="nav-link" href="#!discussion">Discussion</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="#!community">Community</a>
+            </li> 
+            <li class="nav-item">
+                <a class="nav-link" href="#!about">About Us</a>
+            </li>  
+          </ul>
+        </div>  
+    </nav>
+    <hr>
+    <div class="main"  ng-controller="mainController">
+
+         <div class="ng-view"></div>
+    </div>
+    <div class="footer">
+
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
