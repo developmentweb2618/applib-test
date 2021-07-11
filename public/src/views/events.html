@@ -117,7 +117,7 @@
               </div>
               <div class="clearfix">
                 <img src="{{img.onlineEventsImg}}" alt="online-events" class="online-events">
-                <button class="btn btn-primary register-button" >Register</button>
+                <button type="button" class="btn btn-primary register-button" ng-disabled="true">Register</button>
                 <a href="#" class="img2">{{r.yes_rsvp_count}} Registered</a>
               </div>
           </div>
@@ -135,14 +135,15 @@
             <hr>
           </div>
 
-          <div class="card" style="width:270px" ng-repeat="r in result | filter:eventsFilter">
+          <!-- <div class="card" style="width:290px" ng-repeat="r in result | filter:eventsFilter  | orderBy: '-yes_rsvp_count'" > -->
+            <div class="card" style="width:290px" ng-repeat="r in result | filter:eventsFilter" >
             <img class="card-img-top" ng-src="{{eventImg[$index].imgName}}" alt="Card image" style="width:100%">
             <div class="card-body">
               <h4 class="card-title">{{r.name}}</h4>
               <p class="card-text">{{r.local_date}}, {{r.local_time}}</p>
               <hr>
               <a href="#">{{r.yes_rsvp_count}} Registered   </a>
-              <a href="#" class="btn btn-primary stretched-link"> Register</a>
+              <button type="button" class="btn btn-primary stretched-link" ng-disabled="true"> Register</button>
             </div>
           </div>
       </div>

@@ -314,6 +314,17 @@ a#dropdownMenuLink {
     .col-sm-4.right-sidebar{
         padding-left: 40px !important;
     }
+/* 
+    a.btn.btn-primary.stretched-link {
+        float: right;
+        clear: left;
+        margin-top: -10px;
+    } */
+    button.btn.btn-primary.stretched-link {
+        float: right;
+        clear: left;
+        margin-top: -10px;
+    }
 }  
 
 @media screen and (max-width:800px){
