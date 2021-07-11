@@ -34,6 +34,16 @@ allEvents(undefined, (error, data) => {
     result.push(data);
 
  })
+
+
+    //  photosByeventId(undefined, (error, data) => {
+    //   console.log('error', error);
+    //   console.log( data);
+    //   let [eventPhotoById] = data.data;
+
+    //   console.log(eventPhotoById)
+
+    // })
  
  
  app.get('/api/v1/events', (req, res) => {
@@ -77,17 +87,6 @@ app.get('/api/v1/photos/:id', (req, res) => {
     let [eventData] = data.data;
     let eventId = eventData.id;
     console.log(eventData)
-
-    photosByeventId(undefined, (error, data) => {
-      console.log('error', error);
-      console.log( data);
-      let [eventPhotoById] = data.data;
-
-      // let photo = eventPhotoById.member.id;
-      console.log(eventPhotoById)
-
-    })
-
 
 })
 

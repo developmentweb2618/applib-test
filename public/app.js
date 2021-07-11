@@ -19,10 +19,22 @@ app.controller('eventController', function($scope, $http, $log){
         prizebanner: './src/images/prize720.png',
         event_image: './src/images/event_image.png'
     }
+
+    $scope.eventImg = [
+
+    {imgName:'https://secure.meetupstatic.com/photos/event/7/f/8/d/600_496952653.jpeg'},
+    {imgName:'https://secure.meetupstatic.com/photos/event/b/9/7/c/600_496247484.jpeg'},
+    {imgName:'https://secure.meetupstatic.com/photos/event/b/3/5/c/600_495825916.jpeg'},
+    {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
+    {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'},
+    {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
+    {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
+    ]
     $http.get("http://localhost:3000/api/v1/events")
          .then(function(response){
              const {result :[data]} = response.data;
              $scope.result = data.data;
+            //  $scope.result = $scope.eventImg
              console.log($scope.result)
          })
 });
@@ -30,7 +42,19 @@ app.controller('eventController', function($scope, $http, $log){
 
 app.controller('eventDescController', function($scope, $http, $routeParams){
      console.log($routeParams.id)
-     const id = $routeParams.id
+     const id = $routeParams.id;
+
+     $scope.eventImg = [
+
+        {imgName:'https://secure.meetupstatic.com/photos/event/7/f/8/d/600_496952653.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/b/9/7/c/600_496247484.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/b/3/5/c/600_495825916.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
+        ]
+        
     $http.get(`http://localhost:3000/api/v1/events/${id}`)
           .then(function(response){
               console.log(response.data);

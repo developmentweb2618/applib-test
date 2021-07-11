@@ -98,7 +98,7 @@
         
       <!-- cards for all events -->
 
-      <div class="card" ng-repeat="r in result | filter:eventsFilter">
+      <div class="card" ng-repeat="r in result| filter:eventsFilter">
         <a href="#!event-description/{{r.id}}"  class="event-detail-page" >
           <div class="card-body">
               <div class="clearfix">
@@ -107,7 +107,7 @@
                 <h1>{{r.name}}</h1>
               </div>
               <div class="clearfix .body-info ">
-                <img src="{{img.eventsDetailImg}}" class="img2" alt="detail" width="230px">
+                <img ng-src="{{eventImg[$index].imgName}}" class="img2" alt="detail" width="230px">
                 <h2 class="date-event">{{r.local_date}}, {{r.local_time}}</h2>
                 <p>{{r.description | limitTo: "210"}}</p>
               </div>
@@ -136,7 +136,7 @@
           </div>
 
           <div class="card" style="width:270px" ng-repeat="r in result | filter:eventsFilter">
-            <img class="card-img-top" src="{{img.event_image}}" alt="Card image" style="width:100%">
+            <img class="card-img-top" ng-src="{{eventImg[$index].imgName}}" alt="Card image" style="width:100%">
             <div class="card-body">
               <h4 class="card-title">{{r.name}}</h4>
               <p class="card-text">{{r.local_date}}, {{r.local_time}}</p>

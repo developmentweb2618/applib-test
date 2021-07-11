@@ -229,4 +229,10 @@ input, select {
         font-weight: 700;
     }
 
+    .photosRow h1{
+        
+            padding: 30px 250px 14px 0;
+            font-size: 25px;
+    }
+
 }

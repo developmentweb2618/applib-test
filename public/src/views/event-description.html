@@ -30,7 +30,8 @@
 <div class="container-fluid wrapper-color">
  <div class="row">
    <div class="col-sm-7">
-    <div class="wrapper-body">
+    <div class="wrapper-body" ng-repeat="n in finalData">
+      <img ng-src="{{eventImg[$index].imgName}}" alt="">
       <h1 class="event-header">About this Event</h1>
       <p>{{finalData.description}}
       </p>
@@ -91,13 +92,14 @@
         <img src="./src/images/default-photo.png" alt="">
       </div>
     </div>
-    <div class="row">
-      <div class="event-photos">
-        <h1>Photos</h1>
-        <img src="./src/images/event_details_image.png" alt="">
+    <div class="row photosRow">
+      <h1>Photos</h1>
+      <div class="event-photos" ng-repeat="img in eventImg">
+        <!-- <img src="./src/images/event_details_image.png" alt="">
         <img src="./src/images/event_image.png" alt="">
         <img src="./src/images/event_details_image.png" alt="">
-        <img src="./src/images/event_image.png" alt="">
+        <img src="./src/images/event_image.png" alt=""> -->
+        <img ng-src="{{img.imgName}}" alt="">
 
       </div>
     </div>
