@@ -30,7 +30,7 @@ app.controller('eventController', function($scope, $http, $log){
     {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
     {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
     ]
-    $http.get("http://localhost:3000/api/v1/events")
+    $http.get("api/v1/events")
          .then(function(response){
              const {result :[data]} = response.data;
              $scope.result = data.data;
@@ -54,8 +54,8 @@ app.controller('eventDescController', function($scope, $http, $routeParams){
         {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
         {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
         ]
-        
-    $http.get(`http://localhost:3000/api/v1/events/${id}`)
+
+    $http.get(`api/v1/events/${id}`)
           .then(function(response){
               console.log(response.data);
               const {finalData} = response.data;

@@ -22,7 +22,7 @@ const app = express();
 app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
-const port = 3000;
+const port = process.env.PORT || 8080;
 
 console.log(process.argv)
 
