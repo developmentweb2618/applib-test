@@ -172,6 +172,7 @@ a#dropdownMenuLink {
 
   a.img2 {
     padding: 10px 0 0 0;
+    text-decoration: none;
 }
 
   .online-events{
@@ -201,6 +202,25 @@ a#dropdownMenuLink {
     padding-top: 30px;
     font-size: 22px;
     text-align: left;
+} */
+
+/* #eventImages{
+    width: 100%;
+    margin-bottom: 20px;
+} */
+
+/* h1.ng-binding {
+    font-size: 22px;
+}
+
+p.ng-binding {
+    padding: 20px 0 20px 0;
+    text-align: justify;
+}
+
+h2.date-event.ng-binding {
+    font-size: 18px;
+    color: #007bff;
 } */
 
 @media screen and (min-width:480px) {
@@ -324,6 +344,23 @@ a#dropdownMenuLink {
         float: right;
         clear: left;
         margin-top: -10px;
+    }
+
+    .col-sm-4.card-rows {
+        padding-bottom: 0px;
+        padding-right: 0px;
+    }
+
+    .col-sm-2.card-rows {
+        padding-right: 0px;
+    }
+
+    .fa-search{
+        color: #c7dff3;
+    }
+
+    p.ng-binding {
+        padding: 0 10px 0 0;
     }
 }  
 

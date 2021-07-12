@@ -33,8 +33,7 @@
     <div class="wrapper-body">
       <img ng-src="{{eventImg[$index].imgName}}" alt="">
       <h1 class="event-header">About this Event</h1>
-      <p>{{finalData.description}}
-      </p>
+      <p ng-bind-html="finalData.description"></p>
       <div class="youtube-event-video">
         <h1>Video</h1>
         <iframe width="300" height="200" src="https://www.youtube-nocookie.com/embed/ZTh7zYwq5LU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

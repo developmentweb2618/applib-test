@@ -1,5 +1,5 @@
 
-var app = angular.module('applibApp', ['ngRoute']);
+var app = angular.module('applibApp', ['ngRoute','ngSanitize']);
 
 
 app.controller('mainController', function($scope){
@@ -7,9 +7,7 @@ app.controller('mainController', function($scope){
 })
 
 
-app.controller('eventController', function($scope, $http, $log){
-    $scope.name = "card"
-    console.log($scope);
+const eventControllerFunction = function($scope, $http, $log){
     $scope.img = {
         shareImg: './src/images/share_34.png',
         favouriteImg: './src/images/favourite_34.png',
@@ -29,41 +27,78 @@ app.controller('eventController', function($scope, $http, $log){
     {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'},
     {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
     {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
-    ]
+
+    ];
+
+
     $http.get("api/v1/events")
          .then(function(response){
              const {result :[data]} = response.data;
              $scope.result = data.data;
-            //  $scope.result = $scope.eventImg
-             console.log($scope.result)
          })
-});
+};
 
 
-app.controller('eventDescController', function($scope, $http, $routeParams){
-     console.log($routeParams.id)
-     const id = $routeParams.id;
+const popularEventControllerFunction = function($http, $scope){
 
-     $scope.eventImg = [
+    
+    $scope.eventImg = [
 
-        {imgName:'https://secure.meetupstatic.com/photos/event/7/f/8/d/600_496952653.jpeg'},
-        {imgName:'https://secure.meetupstatic.com/photos/event/b/9/7/c/600_496247484.jpeg'},
         {imgName:'https://secure.meetupstatic.com/photos/event/b/3/5/c/600_495825916.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/b/9/7/c/600_496247484.jpeg'},
+        {imgName:'https://secure.meetupstatic.com/photos/event/7/f/8/d/600_496952653.jpeg'},
         {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
         {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'},
         {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
         {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
-        ]
+        ];
 
-    $http.get(`api/v1/events/${id}`)
-          .then(function(response){
-              console.log(response.data);
-              const {finalData} = response.data;
-              $scope.finalData = finalData
-          })
-})
+    $http.get("api/v1/events")
+         .then(function(response){
+             const {result :[data]} = response.data;
+             $scope.popularData = data.data;
+             console.log($scope.popularData)
+         })
+   
+};
+
+const eventDescControllerFunction =  function($scope, $http, $routeParams){
+
+    console.log($routeParams.id)
+    const id = $routeParams.id;
+
+    $scope.eventImg = [
+
+       {imgName:'https://secure.meetupstatic.com/photos/event/7/f/8/d/600_496952653.jpeg'},
+       {imgName:'https://secure.meetupstatic.com/photos/event/b/9/7/c/600_496247484.jpeg'},
+       {imgName:'https://secure.meetupstatic.com/photos/event/b/3/5/c/600_495825916.jpeg'},
+       {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
+       {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'},
+       {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
+       {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
+       ]
+
+   $http.get(`api/v1/events/${id}`)
+         .then(function(response){
+             console.log(response.data);
+             const {finalData} = response.data;
+             $scope.finalData = finalData
+         })
+};
 
 
+// CONTROLLER FUNCTIONS
+
+
+app.controller('eventController', eventControllerFunction);
+
+app.controller('popularEventController', popularEventControllerFunction);
+
+app.controller('eventDescController', eventDescControllerFunction);
+
+
+
+//ROUTERS
 
 app.config(function($routeProvider) {
     $routeProvider
@@ -78,4 +113,4 @@ app.config(function($routeProvider) {
         templateUrl:"./src/views/event-description.html",
         controller:'eventDescController'
     })
-  });
+});

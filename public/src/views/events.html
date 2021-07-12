@@ -38,7 +38,7 @@
         </div>
   </div>
   </section>
-<div class="container-fluid" ng-controller="eventController">
+<div class="container-fluid">
     <div class="row ">
       <div class="col-sm-8">
         <div class="event-header">
@@ -98,18 +98,18 @@
         
       <!-- cards for all events -->
 
-      <div class="card" ng-repeat="r in result| filter:eventsFilter">
+      <div class="card" ng-repeat="r in result| filter:eventsFilter"  ng-controller="eventController">
         <a href="#!event-description/{{r.id}}"  class="event-detail-page" >
           <div class="card-body">
               <div class="clearfix">
                 <img src="{{img.shareImg}}" class="img2" alt="share">
                 <img src="{{img.favouriteImg}}" class="img2" alt="favourite">
-                <h1>{{r.name}}</h1>
+                <h1 ng-bind-html="r.name"></h1>
               </div>
               <div class="clearfix .body-info ">
-                <img ng-src="{{eventImg[$index].imgName}}" class="img2" alt="detail" width="230px">
+                <img ng-src="{{eventImg[$index].imgName}}" id="eventImages" class="img2" alt="detail" width="230px">
                 <h2 class="date-event">{{r.local_date}}, {{r.local_time}}</h2>
-                <p>{{r.description | limitTo: "210"}}</p>
+                <p ng-bind-html="r.description | limitTo:'170'"></p>
               </div>
               <div class="clearfix">
                 <h2 class="speaker">Speakers</h2>
@@ -117,6 +117,7 @@
               </div>
               <div class="clearfix">
                 <img src="{{img.onlineEventsImg}}" alt="online-events" class="online-events">
+                <!-- <p>Online event</p> -->
                 <button type="button" class="btn btn-primary register-button" ng-disabled="true">Register</button>
                 <a href="#" class="img2">{{r.yes_rsvp_count}} Registered</a>
               </div>
@@ -129,20 +130,20 @@
 
       <!-- Right side events -->
 
-      <div class="col-sm-4 right-sidebar">
+      <div class="col-sm-4 right-sidebar" ng-controller="popularEventController">
           <div class="event-header">
             <h1 class="all-events">Popular <span class="blue-event"> Events</span></h1>
             <hr>
           </div>
 
           <!-- <div class="card" style="width:290px" ng-repeat="r in result | filter:eventsFilter  | orderBy: '-yes_rsvp_count'" > -->
-            <div class="card" style="width:290px" ng-repeat="r in result | filter:eventsFilter" >
+            <div class="card" style="width:290px" ng-repeat="p in popularData | filter:eventsFilter | orderBy: '-yes_rsvp_count'" >
             <img class="card-img-top" ng-src="{{eventImg[$index].imgName}}" alt="Card image" style="width:100%">
             <div class="card-body">
-              <h4 class="card-title">{{r.name}}</h4>
-              <p class="card-text">{{r.local_date}}, {{r.local_time}}</p>
+              <h4 class="card-title">{{p.name}}</h4>
+              <p class="card-text">{{p.local_date}}, {{p.local_time}}</p>
               <hr>
-              <a href="#">{{r.yes_rsvp_count}} Registered   </a>
+              <a href="#">{{p.yes_rsvp_count}} Registered   </a>
               <button type="button" class="btn btn-primary stretched-link" ng-disabled="true"> Register</button>
             </div>
           </div>
