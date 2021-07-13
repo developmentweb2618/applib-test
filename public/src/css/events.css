@@ -127,6 +127,7 @@ input, select {
 .page-color h2{
     font-size: 35px;
     line-height: 55px;
+    font-weight: 700;
 } 
 
 .row.content {height: 1500px}

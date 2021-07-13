@@ -76,7 +76,8 @@ const eventDescControllerFunction =  function($scope, $http, $routeParams){
        {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'},
        {imgName:'https://secure.meetupstatic.com/photos/event/2/4/1/f/600_495309247.jpeg'},
        {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
-       ]
+
+    ];
 
    $http.get(`api/v1/events/${id}`)
          .then(function(response){
@@ -87,6 +88,20 @@ const eventDescControllerFunction =  function($scope, $http, $routeParams){
 };
 
 
+const homeControllerFunction = function($scope){
+
+    $scope.img = {
+        homeBannerImg: './src/images/home_image.png',
+        verifiedImg: './src/images/verified.png',
+        eventsDetailImg: './src/images/event_details_image.png',
+        onlineEventsImg:'./src/images/online_event_48.png',
+        onlineEvents:'./src/images/online-events.png',
+        shareImg: './src/images/share_34.png',
+        favouriteImg: './src/images/favourite_34.png',
+        foundingMem : './src/images/founding.png'
+    }
+}
+
 // CONTROLLER FUNCTIONS
 
 
@@ -96,14 +111,15 @@ app.controller('popularEventController', popularEventControllerFunction);
 
 app.controller('eventDescController', eventDescControllerFunction);
 
-
+app.controller('homeController', homeControllerFunction);
 
 //ROUTERS
 
 app.config(function($routeProvider) {
     $routeProvider
     .when("/", {
-      templateUrl : "./src/views/home.html"
+      templateUrl : "./src/views/home.html",
+      controller:'homeController'
     })
     .when("/events", {
         templateUrl : "./src/views/events.html",
