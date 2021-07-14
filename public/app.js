@@ -7,6 +7,12 @@ app.controller('mainController', function($scope){
 })
 
 
+app.run(function($rootScope){
+    $rootScope.myFunction = function(el){
+        $rootScope.i = el;
+    };
+})
+
 const eventControllerFunction = function($scope, $http, $log){
     $scope.img = {
         shareImg: './src/images/share_34.png',
@@ -17,6 +23,9 @@ const eventControllerFunction = function($scope, $http, $log){
         prizebanner: './src/images/prize720.png',
         event_image: './src/images/event_image.png'
     }
+
+    
+
 
     $scope.eventImg = [
 
@@ -78,6 +87,7 @@ const eventDescControllerFunction =  function($scope, $http, $routeParams, $sce)
        {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
 
     ];
+
 
 
     $scope.videoSrc = [

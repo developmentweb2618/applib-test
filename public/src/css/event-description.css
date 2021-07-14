@@ -101,14 +101,29 @@ input, select {
     vertical-align:middle;
 }
 
+.divider{
+    border: 4px solid orange;
+    background-color: orange;
+    height: 68px;
+    position: absolute;
+    top: 3px;
+    right: 15px;
+}
 
+.divider-blue{
+    border: 4px solid #007bff;
+    background-color: #007bff;
+    height: 68px;
+    position: absolute;
+    top: 3px;
+    right: 15px;
+}
 /* MY CODE */
 
 @media screen and (min-width:480px){
 
     .wrapper-color{
         background-color: #eceff1;
-        padding: 0 65px !important;
     }
 
     .wrapper-body{

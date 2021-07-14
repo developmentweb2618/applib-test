@@ -1,4 +1,4 @@
-<div class="container-fluid header-title" ng-controller="eventDescController">
+<div class="container header-title" ng-controller="eventDescController">
     <div class="row">
       <div class="col-sm-10">
         <h1 class="header-name">{{finalData.name}}</h1>
@@ -28,11 +28,11 @@
     </div>
     
 </div>
-<div class="container-fluid wrapper-color">
+<div class="container wrapper-color">
  <div class="row">
    <div class="col-sm-7">
     <div class="wrapper-body">
-      <img ng-src="{{eventImg[$index].imgName}}" alt="">
+      <img ng-src="{{eventImg[i].imgName}}" alt="">
       <h1 class="event-header">About this Event</h1>
       <p ng-bind-html="finalData.description"></p>
       <div class="youtube-event-video" ng-repeat="v in videoSrc">
@@ -89,14 +89,14 @@
         <img src="./src/images/default-photo.png" alt="">
       </div>
     </div> -->
-    <!-- <div class="row photosRow">
+    <div class="row photosRow">
       <h1>Photos</h1>
-      <div class="event-photos" ng-repeat="img in eventImg">
+      <div class="event-photos">
 
-        <img ng-src={{eventImg[$index].imgName}} alt="">
+        <img ng-src={{eventImg[i].imgName}} alt="">
 
       </div>
-    </div> -->
+    </div>
    </div>
  </div>
 </div>

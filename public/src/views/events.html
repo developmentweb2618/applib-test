@@ -11,7 +11,7 @@
         </div>
   </div>
 </section>
-<div class="container-fluid">
+<div class="container">
     <div class="row ">
       <div class="col-sm-8">
         <div class="event-header">
@@ -67,7 +67,7 @@
       <!-- cards for all events -->
 
       <div class="card" ng-repeat="r in result| filter:eventsFilter"  ng-controller="eventController">
-        <a href="#!event-description/{{r.id}}"  class="event-detail-page" >
+        <a href="#!event-description/{{r.id}}"  class="event-detail-page" ng-click="myFunction($index)">
           <div class="card-body">
               <div class="clearfix">
                 <img src="{{img.shareImg}}" class="img2" alt="share">
