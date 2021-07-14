@@ -62,7 +62,7 @@ const popularEventControllerFunction = function($http, $scope){
    
 };
 
-const eventDescControllerFunction =  function($scope, $http, $routeParams){
+const eventDescControllerFunction =  function($scope, $http, $routeParams, $sce){
 
     console.log($routeParams.id)
     const id = $routeParams.id;
@@ -78,6 +78,17 @@ const eventDescControllerFunction =  function($scope, $http, $routeParams){
        {imgName:'https://secure.meetupstatic.com/photos/event/3/a/4/5/600_496934917.jpeg'}
 
     ];
+
+
+    $scope.videoSrc = [
+        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3eKRDTPaOzk")}
+        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/AfhZEDVw64E")},
+        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAquteg")},
+        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAqute")},
+        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAqute")},
+        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/F0vK8JaUTOs")}
+    ]
+
 
    $http.get(`api/v1/events/${id}`)
          .then(function(response){

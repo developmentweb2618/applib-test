@@ -132,7 +132,7 @@ input, select {
 
     
     .col-sm-10 .header-name{
-        padding-bottom: 10px;
+        padding: 20px 0 20px 0;
     }
     .header-name{
         font-size: 25px;
