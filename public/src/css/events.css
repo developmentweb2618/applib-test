@@ -382,6 +382,17 @@ h2.date-event.ng-binding {
           padding: 0;
     }
 
+    .lib{
+        position: relative;
+    }
+
+    .border-lib {
+        color: black;
+        border: 2px solid black;
+        position: absolute;
+        top: 70px;
+        width: 140px;
+    }
  
 }  
 
