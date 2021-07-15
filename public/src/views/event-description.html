@@ -11,7 +11,7 @@
     <div class="row">
       <div class="col-sm-12">
         <h2 class="date-event">{{finalData.local_date}} {{finalData.local_time}}</h2>
-        <a href="javascript:void(0)" ng-disabled="true">Add to Calender</a>
+        <a href="javascript:void(0)" ng-disabled="true">Past</a>
       </div>
     </div>
     <div class="row">
@@ -44,7 +44,7 @@
    <div class="col-sm-5">
     <div class="wrapper-right">
       <h1>Agenda</h1>
-      <h2>22 June 2021</h2>
+      <h2>{{description[i].descDate}}</h2>
     </div>
     <div class="row">
       <div class="col-sm-4">
@@ -53,8 +53,8 @@
          <span class="divider"></span>
       </div>
       <div class="col-sm-8">
-         <h1 class="strategy">Strategy</h1>
-         <p>Learn more about Application Library Engineering group Strategy</p>
+         <h1 class="strategy">Topic</h1>
+         <p>{{description[i].descName}}</p>
       </div>
     </div>
     <div class="row">
@@ -65,7 +65,7 @@
       </div>
       <div class="col-sm-8">
          <h1 class="strategy">Introduction</h1>
-         <p>Learn more about Application Library Engineering group Strategy</p>
+         <p>{{description[i].descIntro}}</p>
       </div>
     </div>
     <div class="row">
@@ -75,8 +75,8 @@
          <span class="divider"></span>
       </div>
       <div class="col-sm-8">
-         <h1 class="strategy">Developing</h1>
-         <p>Learn more about Application Library Engineering group Strategy</p>
+         <h1 class="strategy">Speaker</h1>
+         <p>{{description[i].descSpeaker}}</p>
       </div>
     </div>
     <!-- <div class="row">

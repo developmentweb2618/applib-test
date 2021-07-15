@@ -165,6 +165,8 @@ input, select {
  
     .col-sm-12 a{
         color: 	#ff8b00;
+        font-size: large;
+        text-decoration: none;
     }
 
     .col-sm-12{
@@ -240,8 +242,11 @@ input, select {
 
     .strategy{
         font-size: 21px;
-        
         font-weight: 700;
+    }
+
+    p.ng-binding {
+        padding: 10px 10px 0 0;
     }
 
     .photosRow h1{

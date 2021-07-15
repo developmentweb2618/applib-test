@@ -76,6 +76,15 @@ const eventDescControllerFunction =  function($scope, $http, $routeParams, $sce)
     console.log($routeParams.id)
     const id = $routeParams.id;
 
+    $scope.description = [
+        {descName:"Introduction of HarmonyOS", descIntro:"Learn more about Harmony OS", descSpeaker:"Sharath K S", descDate:"24 June 2021"},
+        {descName:"Townhall with Applib Group", descIntro:"Learn more about Cloud Computing with Android", descSpeaker:"Rupal Shirpurkar", descDate:"27 May 2021"},
+        {descName:"Ask Me Anything about AppLib Group", descIntro:"How to Contribute to the Opensource Community", descSpeaker:"Mr. Valluri K & Mr. Santosh Yadav", descDate:"29 April 2021"},
+        {descName:"Introduction of HarmonyOS", descIntro:"Learn more about Harmony OS", descSpeaker:"Sharath K S", descDate:"27 May 2021"},
+        {descName:"Introduction of HarmonyOS", descIntro:"Learn more about Harmony OS", descSpeaker:"Sharath K S", descDate:"27 May 2021"},
+        {descName:"Introduction of IMPULSE 2021", descIntro:"Learn more about IMPULSE 2021", descSpeaker:"Mr. Valluri, Mr. Ratna Kishore, Mr. Janardhan Revuru , Mr. Raghu Shamanna ,Dr. Vijaya Kumar, Mr. Prashant Mishra, Mr. Sharath K S, Mr. Anupam Rath, Mr. Hari Krishnan", descDate:"25 March 2021"},
+    ]
+
     $scope.eventImg = [
 
        {imgName:'https://secure.meetupstatic.com/photos/event/7/f/8/d/600_496952653.jpeg'},
@@ -123,6 +132,38 @@ const homeControllerFunction = function($scope){
     }
 }
 
+const libraryControllerFunction = function($scope){
+
+    $scope.libImg = {
+        eventBanner: './src/images/library_image.png',
+        github: './src/images/github.png',
+    }
+}
+
+
+
+const discussionControllerFunction = function($scope){
+     
+    $scope.disImg = {
+        discussBanner: './src/images/discussion.png',
+        slack: './src/images/slack.png',
+    }
+}
+
+const communityControllerFunction = function($scope){
+     
+    $scope.comImg = {
+        communityBanner: './src/images/discussion.png',
+        slack: './src/images/slack.png',
+        github: './src/images/github.png',
+        medium:'./src/images/medium.png',
+        linkedin:'./src/images/linkedin.png',
+        twitter:'./src/images/twitter.png',
+        meetup:'./src/images/meetup.png'
+
+    }
+}
+
 // CONTROLLER FUNCTIONS
 
 
@@ -133,6 +174,12 @@ app.controller('popularEventController', popularEventControllerFunction);
 app.controller('eventDescController', eventDescControllerFunction);
 
 app.controller('homeController', homeControllerFunction);
+
+app.controller('libraryController', libraryControllerFunction);
+
+app.controller('discussionController', discussionControllerFunction);
+
+app.controller('communityController', communityControllerFunction);
 
 //ROUTERS
 
@@ -149,5 +196,14 @@ app.config(function($routeProvider) {
     .when("/event-description/:id", {
         templateUrl:"./src/views/event-description.html",
         controller:'eventDescController'
+    }).when("/library",{
+        templateUrl:"./src/views/library.html",
+        controller:'libraryController'
+    }).when("/discussion",{
+        templateUrl:"./src/views/discussion.html",
+        controller:'discussionController'
+    }).when("/community",{
+        templateUrl:"./src/views/community.html",
+        controller:'communityController'
     })
 });
