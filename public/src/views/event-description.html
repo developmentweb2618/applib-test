@@ -16,7 +16,7 @@
     </div>
     <div class="row">
       <div class="col-sm-9">
-        <span><img src="./src/images/online_event_48.png" alt="online-events"><p>Online Event</p></span>
+        <span><img src="./src/images/online_event_48.png" alt="online-events"></span>
         
       </div>
       <div class="col-sm-3">
@@ -35,9 +35,9 @@
       <img ng-src="{{eventImg[i].imgName}}" alt="">
       <h1 class="event-header">About this Event</h1>
       <p ng-bind-html="finalData.description"></p>
-      <div class="youtube-event-video" ng-repeat="v in videoSrc">
+      <div class="youtube-event-video">
         <h1>Video</h1>
-        <iframe width="300" height="200" ng-src="{{v.videoUrl}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe width="300" height="200" ng-src="{{videoSrc[i].videoUrl}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
    </div>

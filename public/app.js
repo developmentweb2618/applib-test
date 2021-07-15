@@ -91,12 +91,12 @@ const eventDescControllerFunction =  function($scope, $http, $routeParams, $sce)
 
 
     $scope.videoSrc = [
-        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3eKRDTPaOzk")}
-        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/AfhZEDVw64E")},
-        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAquteg")},
-        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAqute")},
-        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAqute")},
-        // {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/F0vK8JaUTOs")}
+        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3eKRDTPaOzk")},
+        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/AfhZEDVw64E")},
+        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAquteg")},
+        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAqute")},
+        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/3xIooAqute")},
+        {videoUrl:$sce.trustAsResourceUrl("https://www.youtube.com/embed/F0vK8JaUTOs")}
     ]
 
 

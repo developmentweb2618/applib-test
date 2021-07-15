@@ -77,7 +77,7 @@
               <div class="clearfix .body-info ">
                 <img ng-src="{{eventImg[$index].imgName}}" id="eventImages" class="img2" alt="detail" width="230px">
                 <h2 class="date-event">{{r.local_date}}, {{r.local_time}}</h2>
-                <p ng-bind-html="r.description | limitTo:'170'"></p>
+                <p ng-bind-html="r.description | limitTo:'163'"></p>
               </div>
               <div class="clearfix">
                 <h2 class="speaker">Speakers</h2>
@@ -110,7 +110,7 @@
             <div class="card-body">
               <h4 class="card-title">{{p.name}}</h4>
               <p class="card-text">{{p.local_date}}, {{p.local_time}}</p>
-              <hr>
+              <hr  class="side-bar">
               <a href="javascript:void(0)">{{p.yes_rsvp_count}} Registered   </a>
               <button type="button" class="btn btn-primary stretched-link" ng-disabled="true"> Register</button>
             </div>
